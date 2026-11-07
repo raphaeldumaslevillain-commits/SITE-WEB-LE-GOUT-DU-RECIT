@@ -9,6 +9,7 @@
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/cormorant.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
+  <noscript><style>.prologue .prologue-identity {opacity:1}</style></noscript>
   <script src="site.js" defer></script>
 </head>
 <body>
@@ -26,38 +27,25 @@
       </nav>
     </div>
   </header>
+  <div class="prologue" data-prologue aria-hidden="true">
+    <div class="prologue-stage">
+      <video src="assets/prologue.mp4" preload="auto" muted playsinline disablepictureinpicture disableremoteplayback></video>
+      <img class="prologue-poster" src="assets/prologue.webp" width="1100" height="618" alt="" fetchpriority="high">
+      <div class="prologue-identity">
+        <img src="assets/logo.svg" width="377" height="174" alt="">
+        <span>Nathalie Peine</span>
+      </div>
+    </div>
+  </div>
 
   <main id="contenu">
-    <section class="hero" aria-labelledby="titre">
-      <div class="shell hero-grid">
-        <div class="hero-copy">
+    <section class="welcome section-space" aria-labelledby="titre">
+      <div class="shell welcome-grid">
+        <div>
           <p class="eyebrow"><span class="ink-mark" aria-hidden="true"></span> Lectures · Formations · Familles</p>
           <h1 id="titre">Les histoires <em>nous relient.</em></h1>
-          <p class="hero-intro">Je suis <strong>Nathalie Peine</strong>, lectrice et formatrice indépendante et nomade. J’ouvre des espaces pour lire, écouter et partager des récits, dès le plus jeune âge.</p>
-          <a class="button" href="#interventions">Découvrir mes interventions <span aria-hidden="true">↓</span></a>
         </div>
-        <figure class="film-rail" data-film>
-          <div class="film-sticky">
-            <div class="film-frame">
-              <video id="prologue" src="assets/prologue.mp4" preload="metadata" muted playsinline aria-hidden="true" tabindex="-1"></video>
-              <img class="film-poster" src="assets/prologue.webp" alt="" fetchpriority="high" width="1100" height="618">
-              <div class="film-end" aria-hidden="true">
-                <img src="assets/logo.svg" width="262" height="121" alt="">
-                <span>Nathalie Peine</span>
-              </div>
-            </div>
-            <figcaption class="film-caption">
-              <div class="film-label"><span>01</span> Prologue illustré</div>
-              <div class="film-controls" hidden>
-                <button class="play" type="button" aria-controls="prologue" aria-label="Lire l’animation">
-                  <svg viewBox="0 0 20 20" width="17" height="17" fill="none" aria-hidden="true"><path class="play-symbol" d="M7 4.5 15 10l-8 5.5z" fill="currentColor"/><path class="pause-symbol" d="M7 5v10m6-10v10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                </button>
-                <div class="film-meter" aria-hidden="true"><span></span></div>
-                <span class="film-hint">Défiler pour animer</span>
-              </div>
-            </figcaption>
-          </div>
-        </figure>
+        <p class="welcome-intro">Je suis <strong>Nathalie Peine</strong>, lectrice et formatrice indépendante et nomade. J’ouvre des espaces pour lire, écouter et partager des récits, dès le plus jeune âge.</p>
       </div>
     </section>
 
