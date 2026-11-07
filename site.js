@@ -44,13 +44,17 @@ if (prologue) {
 
   function syncScroll() {
     frameRequest = 0;
-    if (failed || motion.matches) return;
+    const pinnedTop = Number.parseFloat(getComputedStyle(stage).top);
+    const travelled = pinnedTop - prologue.getBoundingClientRect().top;
+
+    if (failed || motion.matches) {
+      prologue.classList.toggle('is-complete', travelled > 0);
+      return;
+    }
 
     const distance = (prologue.clientHeight - stage.offsetHeight) * playbackShare;
     if (distance <= 0) return;
 
-    const pinnedTop = Number.parseFloat(getComputedStyle(stage).top);
-    const travelled = pinnedTop - prologue.getBoundingClientRect().top;
     progress = Math.max(0, Math.min(1, travelled / distance));
     if (progress <= 0.003) {
       progress = 0;
@@ -66,7 +70,7 @@ if (prologue) {
   function applyMotionPreference() {
     const allowScroll = !failed && !motion.matches;
     prologue.classList.toggle('is-scrollable', allowScroll);
-    prologue.classList.toggle('is-complete', !allowScroll);
+    prologue.classList.remove('is-complete');
     if (!allowScroll) prologue.classList.remove('has-frame');
     scheduleSync();
   }

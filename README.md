@@ -12,7 +12,7 @@ python3 -m http.server 8426
 
 Ouvrir [localhost:8426](http://localhost:8426). Le site ne demande ni installation de dépendances ni compilation.
 
-La vidéo de quatre secondes occupe le premier écran sous la navigation. Elle avance en descendant et se rembobine en remontant. À la fin du prologue, le logo et le nom de Nathalie Peine apparaissent, puis le titre et le texte d’accueil se découvrent plus bas. Si la réduction des animations est activée ou si le navigateur ne peut pas lire la vidéo, le logo s’affiche directement.
+Le premier écran affiche le menu sur fond beige. Dès le premier défilement, le prologue de quatre secondes se dévoile sous la navigation. La vidéo avance en descendant et se rembobine en remontant. À la fin, le logo et le nom de Nathalie Peine apparaissent, puis le titre et le texte d’accueil se découvrent plus bas. Si la réduction des animations est activée ou si le navigateur ne peut pas lire la vidéo, le premier défilement révèle le logo.
 
 ## Sources
 
