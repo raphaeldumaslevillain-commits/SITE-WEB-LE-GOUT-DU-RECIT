@@ -34,7 +34,8 @@ figure,p,h1,h2,h3 {margin:0}
 h1,h2,h3 {font-family:var(--serif);font-weight:600;line-height:.96;letter-spacing:-.045em}
 h2 {font-size:clamp(3rem,6.1vw,6.1rem)}
 h3 {font-size:clamp(2.05rem,3.3vw,3.1rem)}
-:is(h1,h2,h3) em {font-family:var(--script);font-style:normal;font-weight:700;letter-spacing:-.025em;color:var(--red)}
+:is(h1,h2,h3) em,.script-title {font-family:var(--script);font-style:normal;font-weight:700;letter-spacing:-.025em}
+:is(h1,h2,h3) em,.activity-body .script-title {color:var(--red)}
 ul {padding-inline-start:1.25rem}
 p {color:var(--body);font-family:var(--copy)}
 figcaption,.detail-section li {font-family:var(--copy)}
@@ -66,22 +67,23 @@ strong {font-weight:700}
 .prologue-identity img {width:min(64vw,27rem);filter:brightness(0) invert(1)}
 .prologue-identity span {font:600 clamp(1.7rem,4vw,3.15rem)/1 var(--serif)}
 
-.welcome-grid {display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(2rem,7vw,7rem);align-items:end}
+.welcome-grid {display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:clamp(2rem,7vw,7rem);align-items:end}
 .eyebrow,.index {font:700 .73rem/1.5 var(--sans);text-transform:uppercase;letter-spacing:.15em;color:var(--red)}
-.ink-mark {display:inline-block;width:2rem;height:.53rem;margin-right:.35rem;vertical-align:1px;border-top:2px solid currentColor;border-radius:58% 42% 50% 49%;transform:rotate(-8deg)}
-.welcome h1 {font-size:clamp(3.85rem,7.1vw,7.55rem);margin-top:.94rem;line-height:.85}
+.welcome h1 {font-size:clamp(3.85rem,7.1vw,7.55rem);line-height:.85}
 .welcome h1 em {display:block}
-.welcome-intro {max-width:30rem;font-size:clamp(1.08rem,1.75vw,1.35rem)}
-.button {display:inline-flex;align-items:center;justify-content:space-between;gap:1.2rem;min-height:49px;max-width:100%;padding:.68rem 1.2rem .68rem 1.36rem;border:1px solid var(--ink);border-radius:100px;background:var(--ink);color:var(--light);font-size:.92rem;font-weight:700;transition:background .2s,color .2s,border .2s}
+.welcome-intro {max-width:34rem;font-size:clamp(1.08rem,1.75vw,1.35rem);text-wrap:balance}
+.button {display:inline-flex;align-items:center;justify-content:space-between;gap:1.2rem;min-height:49px;max-width:100%;padding:.68rem 1.2rem .68rem 1.36rem;border:1px solid var(--ink);background:var(--ink);color:var(--light);font-size:.92rem;font-weight:700;transition:background .2s,color .2s,border .2s}
 .button span {font-size:1.15rem}
 .button:hover {background:var(--red);border-color:var(--red)}
 .button-light {background:var(--paper);color:var(--ink);border-color:var(--paper)}
 .button-light:hover {background:var(--rose);border-color:var(--rose)}
 
 .section-head {display:flex;justify-content:space-between;align-items:end;gap:1.5rem;margin-bottom:clamp(1.6rem,4vw,3.3rem)}
-.section-head h2,.truck h2,.about h2,.contact h2,.detail-head h1 {margin:.75rem 0 0}
+.section-head h2,.about h2,.contact h2 {margin-top:.75rem}
 .section-head > p {max-width:22rem;margin-bottom:.25rem;font-size:1.06rem}
 .activities {background:var(--light);border-block:1px solid var(--line)}
+.activities .section-head {align-items:start}
+.activities .section-head > p {margin-top:1.85rem}
 .activity-grid,.journal-grid {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(1rem,2.3vw,2.15rem)}
 .activity {border:1px solid var(--line);border-radius:.45rem;overflow:hidden;background:var(--paper)}
 .activity-link {display:flex;flex-direction:column;height:100%}
@@ -103,14 +105,14 @@ strong {font-weight:700}
 .truck-grid,.about-grid,.contact-grid {display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);align-items:center;gap:clamp(2rem,7.2vw,7.5rem)}
 .truck-photo img {width:100%;aspect-ratio:1.36;object-fit:cover;object-position:50% 56%;border-radius:.4rem}
 .truck-photo figcaption {padding-top:.65rem;font-size:.8rem;color:#ece7df}
-.truck .eyebrow,.truck h2 em {color:#fac5c3}
+.truck h2 em {color:#fac5c3}
 .truck .button:focus-visible,.truck .text-link:focus-visible {outline-color:var(--rose)}
-.truck-copy p:not(.eyebrow) {max-width:30rem;margin:1.3rem 0 1.6rem;color:#f2e9da;font-size:1.06rem}
+.truck-copy p {max-width:30rem;margin:1.3rem 0 1.6rem;color:#f2e9da;font-size:1.06rem}
 .about {border-bottom:1px solid var(--line)}
 .about-grid {grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr)}
 .about-image {border-radius:50% 50% .6rem .6rem;background:#f2debd;aspect-ratio:1.1;overflow:hidden}
 .about-image img {width:100%;height:100%;object-fit:contain;object-position:center bottom}
-.about .lead {margin:1rem 0 .65rem;color:var(--red);font:400 clamp(1.55rem,2.7vw,2.1rem)/1.18 var(--copy)}
+.about .lead {margin:1rem 0 .65rem;color:var(--red);font:400 clamp(.85rem,1.82vw,1.82rem)/1.25 var(--copy)}
 .about p:not(.eyebrow) {max-width:34rem}
 .about .text-link {margin-top:.7rem}
 .journal-entry a {display:block;border-top:1px solid var(--line);padding-top:.85rem}
@@ -123,7 +125,9 @@ strong {font-weight:700}
 .journal-entry a:hover .text-link {color:var(--red)}
 .partners {border-block:1px solid var(--line)}
 .partners-inner {display:flex;align-items:center;justify-content:space-between;gap:1.2rem;padding-block:1.25rem}
-.partners ul {list-style:none;display:flex;flex-wrap:wrap;gap:.45rem 1.3rem;padding:0;margin:0;font-size:.91rem;font-weight:600}
+.partners ul {list-style:none;display:flex;flex-wrap:wrap;gap:.65rem;padding:0;margin:0}
+.partners li {width:clamp(5.75rem,9.5vw,8rem);height:5.5rem;padding:.55rem;background:white}
+.partners img {width:100%;height:100%;object-fit:contain}
 .contact {background:var(--rose)}
 .contact h2 {font-size:clamp(3.45rem,7.6vw,7.5rem)}
 .contact-links {display:flex;align-items:flex-start;flex-direction:column}
@@ -142,6 +146,7 @@ strong {font-weight:700}
 .breadcrumb a {text-decoration:underline;text-underline-offset:.2em}
 .detail-grid,.detail-section {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.9fr);gap:clamp(2rem,6vw,7rem);align-items:center}
 .detail-head h1 {font-size:clamp(4rem,8.3vw,7.5rem)}
+.detail-head .training-title {font-size:clamp(2.6rem,6.2vw,6rem);line-height:1}
 .detail-head .lead {margin:1rem 0 1.3rem;max-width:32rem;font-size:clamp(1.02rem,1.45vw,1.2rem)}
 .detail-hero-media {background:#f0dcb9;border-radius:.4rem;overflow:hidden}
 .detail-hero-media img {width:100%;aspect-ratio:1.4;object-fit:cover}
@@ -158,7 +163,7 @@ strong {font-weight:700}
 .detail-section figure .contained {object-fit:contain;background:#f0dcb9}
 .detail-section figcaption {font-size:.81rem;margin-top:.3rem}
 .detail-section .text-link {margin-top:.25rem}
-.detail-contact {border-bottom:0}
+.detail-contact {border-bottom:0;align-items:end}
 .detail-contact h2 {font-size:clamp(3rem,6.3vw,5.8rem)}
 
 @media (max-width: 740px) {
@@ -174,8 +179,9 @@ strong {font-weight:700}
   .navigation a {padding-inline:.55rem}
   .navigation .nav-contact {justify-content:space-between;padding-inline:.85rem}
   .welcome-grid,.truck-grid,.about-grid,.contact-grid,.detail-grid,.detail-section {grid-template-columns:1fr;gap:1.65rem}
-  .welcome h1 {font-size:clamp(3.45rem,11vw,5.9rem);margin-top:.7rem}
+  .welcome h1 {font-size:clamp(3.45rem,11vw,5.9rem)}
   .section-head {flex-direction:column;align-items:start;gap:.75rem}
+  .activities .section-head > p {margin-top:0}
   .activity-grid,.journal-grid {grid-template-columns:repeat(2,minmax(0,1fr));gap:1.15rem}
   .about-image {max-width:31rem}
   .partners-inner {align-items:start;flex-direction:column;gap:.5rem}
